@@ -1,23 +1,40 @@
 import React from 'react';
+import ReactWhatsapp from 'react-whatsapp';
 
-import { Row, Col, Card, Input, Button } from 'react-materialize';
+import whatsapp from '../../images/whatsapp.png'
 
-import UserProfile from '../user_profile/UserProfile'
+import { Row, Col, Card } from 'react-materialize';
 
 function Contact() {
+    const cssButton = {
+        background: 'none',
+        border: 'none'
+
+    }
+
+    const cssImg = {
+        width: '20px',
+        height: '20px',
+    }
+
     return (
         <Row>
-            <Col m={3} s={12}>
-                <UserProfile />
-            </Col>
+            <Col m={3} s={12} />
             <Col m={8} s={12}>
-                <h5>Contact</h5>
+                <h5>Contatos</h5>
                 <Card>
                     <Row>
-                        <Input placeholder="lorem@ipsum.com" type="email" label="Email" s={12} />
-                        <Input placeholder="Lorem Ipsum..." label="Message" s={12} />
                         <Col s={12} m={12}>
-                            <Button waves='light' className="right grey darken-2">SEND</Button>
+                            <ul>
+                                <li><b>Email:</b> orlandoneto23@gmail.com</li>
+                                <li><b>Whatsapp:</b> 85 9 8774-7221</li>
+                                <li><b>Conversar via:</b>
+                                    <ReactWhatsapp
+                                        style={cssButton}
+                                        number="85-98774-7221" message="Olá José Orlando, venho por meio do seu portfólio.">
+                                        <img src={whatsapp} style={cssImg} alt="Whatsapp" />
+                                    </ReactWhatsapp></li>
+                            </ul>
                         </Col>
                     </Row>
                 </Card>
